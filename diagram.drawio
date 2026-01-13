@@ -1,0 +1,48 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.3.0 Chrome/140.0.7339.249 Electron/38.7.2 Safari/537.36" version="29.3.0">
+  <diagram name="Azure Cloud Deployment - Traffic Flow" id="zd3NvAGIsobHsiinL7AM">
+    <mxGraphModel dx="690" dy="593" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-1" parent="1" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=1;fontColor=#000000;" value="Corp-VNet" vertex="1">
+          <mxGeometry height="400" width="698" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-2" parent="0sdu9v8LNT4HqS5ejceJ-1" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Public-Subnet 10.0.1.0/24" vertex="1">
+          <mxGeometry height="150" width="299.14285714285705" x="29.914285714285707" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-3" parent="0sdu9v8LNT4HqS5ejceJ-2" style="rounded=1;fillColor=#ffffff;strokeColor=#000;fontSize=12;fontColor=#000000;" value="Windows Server VM" vertex="1">
+          <mxGeometry height="80" width="159.54285714285714" x="59.82857142857143" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-4" parent="0sdu9v8LNT4HqS5ejceJ-2" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontColor=#000000;" value="NSG Firewall\nRDP: 3389\nHTTP: 80\nDeny Other" vertex="1">
+          <mxGeometry height="60" width="159.54285714285714" x="59.82857142857143" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-5" parent="0sdu9v8LNT4HqS5ejceJ-1" style="rounded=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontColor=#000000;" value="Private-Subnet 10.0.2.0/24" vertex="1">
+          <mxGeometry height="150" width="299.14285714285705" x="368.9428571428572" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-6" parent="1" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontColor=#000000;" value="Local Test User\n(Admin Role)" vertex="1">
+          <mxGeometry height="60" width="200" x="50" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-7" parent="1" style="rounded=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontColor=#000000;" value="Recovery Services Vault" vertex="1">
+          <mxGeometry height="60" width="220" x="480" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-8" edge="1" parent="1" source="0sdu9v8LNT4HqS5ejceJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#000;endArrow=block;labelBackgroundColor=none;fontSize=11;" target="0sdu9v8LNT4HqS5ejceJ-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-9" edge="1" parent="1" source="0sdu9v8LNT4HqS5ejceJ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#1a75ff;endArrow=block;label=Backup;fontSize=11;" target="0sdu9v8LNT4HqS5ejceJ-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="130" />
+              <mxPoint x="300" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-10" edge="1" parent="1" source="0sdu9v8LNT4HqS5ejceJ-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#008000;endArrow=block;dashed=0;label=RDP/HTTP;fontSize=11;" target="0sdu9v8LNT4HqS5ejceJ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="0sdu9v8LNT4HqS5ejceJ-11" edge="1" parent="1" source="0sdu9v8LNT4HqS5ejceJ-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#ff9900;endArrow=block;dashed=1;label=Ping;fontSize=11;" target="0sdu9v8LNT4HqS5ejceJ-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
